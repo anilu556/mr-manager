@@ -1,33 +1,277 @@
-.App {
+/* *{
+  outline: 1px solid red;
+}
+*/
+
+/* navbar */
+.navbar{
+  background: #5eaff9;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #1748aa, #5eaff9);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right,  #1748aa, #5eaff9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+a.navbar-item {
+  color: #d4e9ff;
+}
+
+a.navbar-link{
+  color: #d4e9ff;
+}
+
+.navbar-item.drop{
+  color: #1748aa;
+}
+
+a.navbar-link:after{
+border-color: #d4e9ff;
+}
+
+.navbar-img{
+  height: 60px;
+  margin-top: 3px;
+  margin-left: 2px;
+}
+
+a.button.is-primary{
+background-color:#1748aa;
+color: #d4e9ff;
+}
+
+a.button.is-primary:hover {
+background: rgba(0,0,0,0);
+color: #d4e9ff;
+box-shadow: inset 0 0 0 3px #d4e9ff;
+}
+
+/* Login */
+
+.login {
+  background: url("./images/log.png");
+  background-size: cover;
+  height: 500px;
+}
+
+.login-form{
+  background-color: #f7f7f7;
+  height: 280px;
+  width: 400px;
+  position: absolute;
+  margin-top: 8%;
+  margin-left: 35%;
+  border-radius: 5px;
+  padding:20px;
+  box-shadow: 2px 2px 30px #353535;
+}
+
+.login-form p{
+  color: #052562;
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+/* home */
+.section-home {
+  background: url("./images/build5.png");
+  background-size: cover;
+  height: 400px;
+  padding: 30px;
+  position: relative;
+}
+
+.section-home_call{
+  position: absolute;
+  top: 20%;
+  left: 50%;
+}
+
+.section-home_call p{
+  color: white;
+  font-weight: bolder;
+  font-size: 40px;
+}
+
+.text_blue{
+  font-weight: bolder;
+  font-size: 50px;
+}
+
+.button.is-inverted.is-outlined{
+  position: absolute;
+  top: 120%;
+  right: 38%;
+  width: 250px;
+  height: 50px;
+  font-size: 20px;
+  background-color: #ffffff;
+  color: #1748aa;
+}
+
+.button.is-inverted.is-outlined:hover {
+background: #1748aa;
+color: #ffffff;
+box-shadow: inset 0 0 0 3px #ffffff;
+}
+
+/* Acerce de*/
+.section-about-home {
+  height: 180px;
+  background: #5eaff9;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #1748aa,#5eaff9);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right,  #1748aa,#5eaff9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.section-about-home p{
+  color: white;
+  font-weight: 300;
+  font-size: 24px;
+  text-align: center;
+  margin: auto;
+  padding-top: 50px;
+  width: 60%;
+}
+
+.section-about p{
+  color: #052562;
+  font-weight: 300;
+  font-size: 24px;
+  text-align: center;
+  margin: auto;
+  padding-top: 50px;
+  width: 60%;
+}
+
+.section-about-p{
+  height: 180px;
+  background: #f7f7f7;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right,#e8ebed, #f7f7f7);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right,#e8ebed, #f7f7f7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.section-about-img img{
+  display: block;
+}
+
+/*Como funciona */
+
+.columns{
+  justify-content: center;
+}
+
+.column-img{
+  width: 60%;
+  margin-left: 20%;
+  display: block;
+}
+
+.columns p{
+  color: #052562;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.columns strong{
+  color: #052562;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.cols-how{
+  margin-top: 30px;
+}
+
+.section-how-img{
+  display: block;
+}
+
+/*Sign up*/
+.section-signup {
+  background: url("./images/signup.png");
+  background-size: cover;
+  height: 500px;
+  position: relative;
+}
+
+.signup-form{
+  background-color: #f7f7f7;
+  height: 280px;
+  width: 400px;
+  position: absolute;
+  margin-top: 8%;
+  margin-left: 35%;
+  border-radius: 5px;
+  padding:20px;
+  box-shadow: 2px 2px 30px #353535;
+}
+
+.signup-form p{
+  color: #052562;
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.field{
+  width: 100px;
+}
+
+input.input{
+  border-color: #f81f5c;
+}
+
+/* Contacto */
+
+.section-contact-home{
+  height: 200px;
+  background: #f7f7f7;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right,#e8ebed, #f7f7f7);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right,#e8ebed, #f7f7f7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.section-contact-home p{
+  padding-top: 10px;
+  color: #052562;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bolder;
+}
+
+.field{
+  width: 50%;
+  margin: auto;
+}
+
+.section-contact-img img{
+  display: block;
+}
+.section-contact-form{
+  height: 400px;
+  background: #f7f7f7;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right,#e8ebed, #f7f7f7);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right,#e8ebed, #f7f7f7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+/* footer */
+.footer{
+  height: 240px;
+  background: #5eaff9;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #1748aa,#5eaff9);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right,  #1748aa,#5eaff9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.section-footer-home{
+  height: 80px;
+  background: #5eaff9;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #1748aa,#5eaff9);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right,  #1748aa,#5eaff9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.section-footer-home p{
   color: white;
+  font-weight: 300;
+  font-size: 24px;
+  text-align: center;
+  margin: auto;
+  padding-top: 50px;
+  width: 60%;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+a.link_footer {
+  color: white;
 }
