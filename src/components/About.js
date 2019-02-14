@@ -11,6 +11,9 @@ class About extends Component {
       <p>
       Mr. Manager te ayudará a llevar control de tus bienes, a estar más cerca de las necesidades de tus inquilinos y a reducir la carga de trabajo.
       </p>
+      <p>
+      Regístrate como manager, crea tus propiedades, da de alta a tus inquilinos y ¡Listo!
+      </p>
       </div>
     </div>
     );

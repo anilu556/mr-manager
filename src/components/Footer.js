@@ -8,7 +8,7 @@ class Footer extends Component {
     <footer class="footer">
       <div class="content has-text-centered">
         <Link to="/"><img class="navbar-img" src={logo} alt="logo"/></Link>
-        <p> by <a className="link_footer" target="_blank" href="https://www.linkedin.com/in/anilu556/">Ana González</a></p>
+        <p> by <a className="link_footer" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/anilu556/">Ana González</a></p>
       </div>
     </footer>
     );

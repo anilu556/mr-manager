@@ -1,7 +1,5 @@
-/* *{
-  outline: 1px solid red;
-}
-*/
+
+
 
 /* navbar */
 .navbar{
@@ -53,12 +51,11 @@ box-shadow: inset 0 0 0 3px #d4e9ff;
 
 .login-form{
   background-color: #f7f7f7;
-  height: 280px;
+  height: 340px;
   width: 400px;
   position: absolute;
   margin-top: 8%;
   margin-left: 35%;
-  border-radius: 5px;
   padding:20px;
   box-shadow: 2px 2px 30px #353535;
 }
@@ -68,6 +65,10 @@ box-shadow: inset 0 0 0 3px #d4e9ff;
   text-align: center;
   font-size: 20px;
   margin-bottom: 30px;
+}
+
+.here{
+  color: #f81f5c;
 }
 
 /* home */
@@ -115,7 +116,6 @@ box-shadow: inset 0 0 0 3px #ffffff;
 
 /* Acerce de*/
 .section-about-home {
-  height: 180px;
   background: #5eaff9;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #1748aa,#5eaff9);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right,  #1748aa,#5eaff9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -127,7 +127,7 @@ box-shadow: inset 0 0 0 3px #ffffff;
   font-size: 24px;
   text-align: center;
   margin: auto;
-  padding-top: 50px;
+  padding: 50px;
   width: 60%;
 }
 
@@ -136,13 +136,12 @@ box-shadow: inset 0 0 0 3px #ffffff;
   font-weight: 300;
   font-size: 24px;
   text-align: center;
+  padding: 20px;
   margin: auto;
-  padding-top: 50px;
   width: 60%;
 }
 
-.section-about-p{
-  height: 180px;
+.section-about{
   background: #f7f7f7;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right,#e8ebed, #f7f7f7);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right,#e8ebed, #f7f7f7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -153,33 +152,35 @@ box-shadow: inset 0 0 0 3px #ffffff;
 }
 
 /*Como funciona */
-
-.columns{
-  justify-content: center;
+.section-how{
+  background: #ffffff;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right,#d9dcdd, #ffffff);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right,#d9dcdd, #ffffff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .column-img{
-  width: 60%;
-  margin-left: 20%;
   display: block;
-}
-
-.columns p{
-  color: #052562;
-  text-align: center;
-}
-
-.columns strong{
-  color: #052562;
+  height: 200px;
 }
 
 .cols-how{
-  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  margin: auto;
 }
 
-.section-how-img{
-  display: block;
+.cols-how p{
+  color: #052562;
+  font-size: 18px;
 }
+
+.cols-how strong{
+  color: #052562;
+  font-size: 24px;
+}
+
 
 /*Sign up*/
 .section-signup {
@@ -196,7 +197,7 @@ box-shadow: inset 0 0 0 3px #ffffff;
   position: absolute;
   margin-top: 8%;
   margin-left: 35%;
-  border-radius: 5px;
+
   padding:20px;
   box-shadow: 2px 2px 30px #353535;
 }
@@ -216,21 +217,15 @@ input.input{
   border-color: #f81f5c;
 }
 
-/* Contacto */
+button.button.is-primary{
+  background-color: #f81f5c;
+}
 
-.section-contact-home{
-  height: 200px;
-  background: #f7f7f7;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right,#e8ebed, #f7f7f7);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right,#e8ebed, #f7f7f7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+button.button.is-primary:hover{
+  background-color: #1748aa;
 }
-.section-contact-home p{
-  padding-top: 10px;
-  color: #052562;
-  text-align: center;
-  font-size: 24px;
-  font-weight: bolder;
-}
+
+/* Contacto */
 
 .field{
   width: 50%;
@@ -246,8 +241,10 @@ input.input{
   background: -webkit-linear-gradient(to right,#e8ebed, #f7f7f7);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right,#e8ebed, #f7f7f7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-
-
+/*Dashboard*/
+.column-dashboard{
+  height: 100px;
+}
 /* footer */
 .footer{
   height: 240px;

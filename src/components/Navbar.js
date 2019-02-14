@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import logo from '../images/logolar.png';
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 
 class Navbar extends Component {
+
+  handleLogout = () => {
+
+    localStorage.removeItem("token");
+    this.props.history.push("/");
+  }
+
   render() {
     return (
       <nav class="navbar is-fixed-top"  role="navigation" aria-label="main navigation">
@@ -31,9 +38,7 @@ class Navbar extends Component {
               Manager
               </a>
             <div class="navbar-dropdown">
-              <Link className="navbar-item drop" to="/dashboard" >Dashboard</Link>
-                <hr class="navbar-divider" />
-                <a class="navbar-item drop">
+                <a  onClick={ this.handleLogout } class="navbar-item drop">
                 Log out
                 </a>
             </div>
@@ -53,4 +58,4 @@ class Navbar extends Component {
   }
 }
 
-export default Navbar;
+export default withRouter(Navbar);
