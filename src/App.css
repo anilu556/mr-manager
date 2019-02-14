@@ -1,6 +1,4 @@
 
-
-
 /* navbar */
 .navbar{
   background: #5eaff9;  /* fallback for old browsers */
@@ -43,20 +41,19 @@ box-shadow: inset 0 0 0 3px #d4e9ff;
 
 /* Login */
 
-.login {
+.section-login {
   background: url("./images/log.png");
   background-size: cover;
-  height: 500px;
+  display: flex;
+  justify-content: center;
 }
 
 .login-form{
   background-color: #f7f7f7;
-  height: 340px;
+  height: 350px;
   width: 400px;
-  position: absolute;
-  margin-top: 8%;
-  margin-left: 35%;
-  padding:20px;
+  margin:50px;
+  padding: 20px;
   box-shadow: 2px 2px 30px #353535;
 }
 
@@ -72,24 +69,19 @@ box-shadow: inset 0 0 0 3px #d4e9ff;
 }
 
 /* home */
-.section-home {
+.section-content-home {
   background: url("./images/build5.png");
   background-size: cover;
   height: 400px;
-  padding: 30px;
-  position: relative;
-}
-
-.section-home_call{
-  position: absolute;
-  top: 20%;
-  left: 50%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .section-home_call p{
   color: white;
   font-weight: bolder;
   font-size: 40px;
+  margin-right: 30px;
 }
 
 .text_blue{
@@ -98,14 +90,12 @@ box-shadow: inset 0 0 0 3px #d4e9ff;
 }
 
 .button.is-inverted.is-outlined{
-  position: absolute;
-  top: 120%;
-  right: 38%;
   width: 250px;
   height: 50px;
   font-size: 20px;
   background-color: #ffffff;
   color: #1748aa;
+  margin-top: 20px;
 }
 
 .button.is-inverted.is-outlined:hover {
@@ -152,10 +142,9 @@ box-shadow: inset 0 0 0 3px #ffffff;
 }
 
 /*Como funciona */
-.section-how{
-  background: #ffffff;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right,#d9dcdd, #ffffff);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right,#d9dcdd, #ffffff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+.section-how img{
+  display: block;
 }
 
 .column-img{
@@ -163,42 +152,42 @@ box-shadow: inset 0 0 0 3px #ffffff;
   height: 200px;
 }
 
-.cols-how{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 60%;
-  margin: auto;
+.section-how-home{
+  background: #ffffff;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right,#d9dcdd, #ffffff);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right,#d9dcdd, #ffffff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.cols-how p{
+.cols-how-home{
+  display: flex;
+  justify-content: center;
+  margin: 0 15px;
+}
+
+.cols-how-home p{
   color: #052562;
   font-size: 18px;
 }
 
-.cols-how strong{
+.cols-how-home strong{
   color: #052562;
   font-size: 24px;
 }
-
 
 /*Sign up*/
 .section-signup {
   background: url("./images/signup.png");
   background-size: cover;
-  height: 500px;
-  position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .signup-form{
   background-color: #f7f7f7;
   height: 280px;
   width: 400px;
-  position: absolute;
-  margin-top: 8%;
-  margin-left: 35%;
-
-  padding:20px;
+  margin:50px;
+  padding: 20px;
   box-shadow: 2px 2px 30px #353535;
 }
 
@@ -254,7 +243,6 @@ button.button.is-primary:hover{
 }
 
 .section-footer-home{
-  height: 80px;
   background: #5eaff9;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #1748aa,#5eaff9);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right,  #1748aa,#5eaff9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */

@@ -42,8 +42,8 @@ class Login extends Component {
   }
   render() {
     return (
-      <div className="section-signup">
-        <form onSubmit={ this.onSubmit} className="login-form">
+      <div className="section-login">
+        <form className="login-form" onSubmit={ this.onSubmit} >
         <p> Inicia Sesión </p>
           <div class="field">
             <p class="control has-icons-left has-icons-right">

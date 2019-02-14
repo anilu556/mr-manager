@@ -12,7 +12,7 @@ class Navbar extends Component {
 
   render() {
     return (
-      <nav class="navbar is-fixed-top"  role="navigation" aria-label="main navigation">
+      <nav class="navbar "  role="navigation" aria-label="main navigation">
         <React.Fragment>
         <div class="navbar-brand">
           <Link to="/">
