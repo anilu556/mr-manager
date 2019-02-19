@@ -12,6 +12,7 @@ import Properties from './components/Properties';
 import PropertiesRegistered from './components/PropertiesRegistered';
 import Departments from './components/Departments';
 import Tenants from './components/Tenants';
+import Profile from './components/Profile';
 import Footer from './components/Footer';
 import {Route, Switch} from 'react-router-dom';
 import PrivateRoute from "./components/PrivateComponent";
@@ -29,7 +30,7 @@ class App extends Component {
         <Route path= "/signup" component={Signup}/>
         <Route path= "/contact" component={Contact} />
         <Route path= "/login" component={Login}/>
-        <PrivateRoute path= "/dashboard" exact component={Dashboard}/>
+        <PrivateRoute path= "/profile" exact component={Profile}/>
         <PrivateRoute path= "/properties" exact component={Properties}/>
         <PrivateRoute path= "/properties-registered" exact component={PropertiesRegistered}/>
         <PrivateRoute path= "/departments" exact component={Departments}/>
