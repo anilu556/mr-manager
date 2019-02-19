@@ -8,8 +8,13 @@ import How from './components/How';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Dashboard from './components/Dashboard';
+import Properties from './components/Properties';
+import PropertiesRegistered from './components/PropertiesRegistered';
+import Departments from './components/Departments';
+import Tenants from './components/Tenants';
 import Footer from './components/Footer';
 import {Route, Switch} from 'react-router-dom';
+import PrivateRoute from "./components/PrivateComponent";
 import { Components} from 'react-bulma-components/full';
 
 class App extends Component {
@@ -24,7 +29,11 @@ class App extends Component {
         <Route path= "/signup" component={Signup}/>
         <Route path= "/contact" component={Contact} />
         <Route path= "/login" component={Login}/>
-        <Route path= "/dashboard" component={Dashboard}/>
+        <PrivateRoute path= "/dashboard" exact component={Dashboard}/>
+        <PrivateRoute path= "/properties" exact component={Properties}/>
+        <PrivateRoute path= "/properties-registered" exact component={PropertiesRegistered}/>
+        <PrivateRoute path= "/departments" exact component={Departments}/>
+        <PrivateRoute path= "/tenants" exact component={Tenants}/>
         </Switch>
         <Footer />
       </React.Fragment>

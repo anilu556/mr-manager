@@ -27,7 +27,7 @@ class How extends Component {
         </div>
         <div className="how-columns-home">
           <div class="cols-how-home">
-            <p align="right"><strong> Guarda </strong><br /> ¿Necesitas guardar otra propiedad u otro inquilino? Solo tienes que ingresar los datos de cada uno y los tendrás en tu base de datos.</p>
+            <p align="left"><strong> Guarda </strong><br /> ¿Necesitas guardar otra propiedad u otro inquilino? Solo tienes que ingresar los datos de cada uno y los tendrás en tu base de datos.</p>
             <img class="column-img" src={register} alt="select"/>
           </div>
         </div>

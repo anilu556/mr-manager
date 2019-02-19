@@ -7,6 +7,7 @@ import Content from './Content';
 
 class Home extends Component {
   render() {
+    console.log(localStorage.getItem('token'))
     return (
     <div className="section-home">
       <React.Fragment>
@@ -17,7 +18,7 @@ class Home extends Component {
             <p>
             Mr. Manager te ayudará a llevar control de tus bienes, a estar más cerca de las necesidades de tus inquilinos y a reducir la carga de trabajo.
             </p>
-          </div>  
+          </div>
         </div>
 
       <div className="section-how-home">
@@ -35,7 +36,7 @@ class Home extends Component {
         </div>
         <div className="how-columns-home">
           <div class="cols-how-home">
-            <p align="right"><strong> Guarda </strong><br /> ¿Necesitas guardar otra propiedad u otro inquilino? Solo tienes que ingresar los datos de cada uno y los tendrás en tu base de datos.</p>
+            <p align="left"><strong> Guarda </strong><br /> ¿Necesitas guardar otra propiedad u otro inquilino? Solo tienes que ingresar los datos de cada uno y los tendrás en tu base de datos.</p>
             <img class="column-img" src={register} alt="select"/>
           </div>
         </div>

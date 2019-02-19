@@ -28,7 +28,7 @@ class Login extends Component {
     .then(data => {
       if(typeof data.token !== "undefined"){
         localStorage.setItem("token", data.token);
-        this.props.history.push("/dashboard");
+        this.props.history.push("/");
       } else {
         this.setState({
           error: {
