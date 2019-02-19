@@ -38,7 +38,7 @@ class Navbar extends Component {
               Manager
               </a>
             <div class="navbar-dropdown">
-                <Link className="navbar-item drop" to="/managers">Perfil</Link>
+                <Link className="navbar-item drop" to="/profile">Perfil</Link>
                 <Link className="navbar-item drop" to="/properties-registered">Propiedades</Link>
                 <Link className="navbar-item drop" to="/departments">Departmentos</Link>
                 <a  onClick={ this.handleLogout } class="navbar-item drop">
