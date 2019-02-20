@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Navbar from './Navbar';
 
 class Signup extends Component {
 
@@ -28,6 +29,8 @@ class Signup extends Component {
 
   render() {
     return (
+      <React.Fragment>
+        <Navbar />
     <div className="section-signup" >
       <form className="signup-form" onSubmit={ this.onSubmitHandle }>
       <p> ¡Regístrate y comienza a administrar tus propiedades! </p>
@@ -64,6 +67,7 @@ class Signup extends Component {
   </div>
   </form>
 </div>
+</React.Fragment>
     );
   }
 }

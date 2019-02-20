@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NavbarLogged from './NavbarLogged';
 
 class Properties extends Component {
   constructor(){
@@ -68,7 +69,12 @@ class Properties extends Component {
   render() {
     // console.log(localStorage.getItem('token'))
     return (
+      <React.Fragment>
+        <NavbarLogged />
     <div className="section-properties">
+    <p>
+    Registra una nueva propiedad
+    </p>
       <form className ="properties-inputs" onSubmit={ this.onSubmitHandle }>
         <div class="field">
           <div class="control">
@@ -99,6 +105,7 @@ class Properties extends Component {
         </div>
     </form>
   </div>
+  </React.Fragment>
     );
   }
 }

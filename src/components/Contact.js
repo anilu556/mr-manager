@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import contact from '../images/contacto.png';
+import Navbar from './Navbar';
 
 class Contact extends Component {
   render() {
     return (
+      <React.Fragment>
+        <Navbar />
     <div className="section-contact">
       <div className="section-contact-img">
         <img src={contact} alt="contacto"/>
@@ -40,6 +43,7 @@ class Contact extends Component {
         </div>
       </div>
   </div>
+  </React.Fragment>
     );
   }
 }

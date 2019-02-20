@@ -47,14 +47,7 @@ class Navbar extends Component {
             </div>
           </div>
         </div>
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <div class="buttons">
-              <Link className="button is-primary" to="/login"><strong> Log In</strong></Link>
-              </div>
-            </div>
-          </div>
-        </div>
+      </div>
         </React.Fragment>
       </nav>
     );

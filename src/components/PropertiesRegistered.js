@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import NavbarLogged from './NavbarLogged';
 
 class PropertiesRegistered extends Component {
   constructor(){
@@ -7,7 +8,9 @@ class PropertiesRegistered extends Component {
     this.state= {
     managers: [],
     local: '',
-    properties: []
+    properties: [],
+    reload: false,
+    propertyId: ''
     }
   }
 
@@ -41,10 +44,18 @@ class PropertiesRegistered extends Component {
     })
   }
 
-  getProperties = currentUser => {
+  componentDidUpdate = () => {
+  if(this.state.reload) {
+    this.setState({
+      reload: false
+    })
+      this.getProperties()
+    }
+  }
+
+  getProperties = () => {
    //console.log(currentUser)
-   const managerId = currentUser[0]._id
-   console.log(managerId)
+   // const managerId = currentUser[0]._id
    const API_URL = 'https://evening-mesa-38422.herokuapp.com/api/v1'
    fetch(`${API_URL}/managers/${this.state.manager._id}/properties`, {
      method: 'GET',
@@ -63,28 +74,31 @@ class PropertiesRegistered extends Component {
      .catch(e => alert(e))
  }
 
-// handleOnClick = (e) => {
-//   const propertyId = this.state.properties._id
-//   console.log(propertyId)
-//   const API_URL = 'https://evening-mesa-38422.herokuapp.com/api/v1'
-//   fetch (`${API_URL}/properties/${this.state.properties._id}`, {
-//     method: 'DELETE',
-//     headers: {
-//       'Content-Type' : 'application/json',
-//       "Authorization": `barear ${localStorage.getItem("token")}`
-//     }
-//   })
-//   .then(response => response.json())
-//   .then( data => {
-//     this.setState({
-//       properties: data.data
-//     })
-//   })
-//   .catch(e => alert(e))
-// }
+handleDelete = (id) => {
+  console.log(id)
+  const API_URL = 'https://evening-mesa-38422.herokuapp.com/api/v1'
+  fetch (`${API_URL}/properties/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type' : 'application/json',
+      "Authorization": `barear ${localStorage.getItem("token")}`
+    }
+  })
+  .then(response => response.json())
+  .then( data => {
+    console.log(data)
+    this.setState({
+      reload: true
+    })
+  })
+  .catch(e => alert(e))
+}
 
   render() {
+    console.log(this.state.properties)
     return (
+      <React.Fragment>
+        <NavbarLogged />
     <div className="section-properties">
       <p>
       Propiedades registradas
@@ -105,7 +119,10 @@ class PropertiesRegistered extends Component {
               Ciudad
             </th>
             <th>
-              Deptos
+              Ver
+            </th>
+            <th>
+              Agregar
             </th>
             <th>
               Borrar
@@ -114,6 +131,7 @@ class PropertiesRegistered extends Component {
         </thead>
         <tbody>
         {this.state.properties.map(property => {
+          console.log(property)
           return (
           <tr>
             <th>
@@ -132,14 +150,28 @@ class PropertiesRegistered extends Component {
               <p class="buttons">
               <Link to="/departments"><a class="button">
               <span class="icon is-small">
-              <i class="fas fa-plus"></i>
+              <i class="fas fa-search"></i>
               </span>
               </a></Link>
               </p>
             </td>
             <td>
               <p class="buttons">
-              <button  class="button">
+              <Link to={`/departments/${property._id}`}><button class="button">
+              <span class="icon is-small">
+              <i class="fas fa-plus"></i>
+              </span>
+              </button></Link>
+              </p>
+            </td>
+            <td >
+              <p class="buttons">
+
+              <button
+                onClick={()=> this.handleDelete(property._id)}
+                style={{border: '1px solid red'}}
+                class="button">
+
               <span class="icon is-small">
               <i class="fas fa-trash-alt"></i>
               </span>
@@ -160,7 +192,7 @@ class PropertiesRegistered extends Component {
       </p>
       </div>
     </div>
-
+</React.Fragment>
     );
   }
 }

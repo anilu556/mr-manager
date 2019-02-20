@@ -4,11 +4,14 @@ import register from '../images/register.png';
 import select from '../images/select.png';
 import graphs from '../images/graphs.png';
 import how from '../images/como.png';
+import Navbar from './Navbar';
 
 class How extends Component {
   render() {
     return (
     <div className="section-how">
+    <React.Fragment>
+      <Navbar />
       <div className="section-how-img">
         <img src={how} alt="cómo funciona"/>
       </div>
@@ -38,6 +41,7 @@ class How extends Component {
           </div>
         </div>
       </div>
+      </React.Fragment>
     </div>
 
     );

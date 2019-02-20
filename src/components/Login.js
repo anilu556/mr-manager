@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Link, withRouter} from 'react-router-dom';
+import Navbar from './Navbar';
 
 class Login extends Component {
   state = {
@@ -28,7 +29,7 @@ class Login extends Component {
     .then(data => {
       if(typeof data.token !== "undefined"){
         localStorage.setItem("token", data.token);
-        this.props.history.push("/");
+        this.props.history.push("/manager");
       } else {
         this.setState({
           error: {
@@ -42,6 +43,8 @@ class Login extends Component {
   }
   render() {
     return (
+      <React.Fragment>
+        <Navbar />
       <div className="section-login">
         <form className="login-form" onSubmit={ this.onSubmit} >
         <p> Inicia Sesión </p>
@@ -72,7 +75,7 @@ class Login extends Component {
           <p> Si no tienes cuenta, regístrate <Link className="here" to="/signup">aquí</Link> </p>
         </form>
       </div>
-
+</React.Fragment>
     );
   }
 }
