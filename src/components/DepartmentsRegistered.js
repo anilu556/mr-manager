@@ -1,14 +1,59 @@
 import React, { Component } from 'react';
-import NavbarLogged from './NavbarLogged';
 import {Link} from 'react-router-dom';
+import request from 'superagent';
 
 class DepartmentsRegistered extends Component {
+  constructor(props){
+  super(props)
+    this.state ={
+      departments: [],
+      reload: false,
+      departmentsId: ''
+    }
+  }
+
+componentDidMount(){
+  this.getDepartments()
+}
+
+handleDelete = (id) => {
+  console.log(id)
+  const API_URL = 'https://evening-mesa-38422.herokuapp.com/api/v1'
+  fetch (`${API_URL}/departments/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type' : 'application/json',
+      "Authorization": `barear ${localStorage.getItem("token")}`
+    }
+  })
+  .then(response => response.json())
+  .then( data => {
+    this.getDepartments()
+    // console.log(data)
+  })
+  .catch(e => alert(e))
+}
+
+getDepartments = () => {
+  fetch(`https://evening-mesa-38422.herokuapp.com/api/v1/properties/${this.props.match.params.propertyId}/departments`, {
+    method: 'GET',
+    headers: { "Authorization" : `bearer ${localStorage.getItem("token")}`
+  }
+})
+.then( response => response.json())
+.then( data =>{
+  console.log(data)
+  this.setState({
+    departments: data.data
+  })
+})
+.catch(e => alert(e))
+  }
 
     render() {
       console.log(this.props.match.params.propertyId)
       return (
       <React.Fragment>
-        <NavbarLogged />
         <div className="section-departments">
           <p>
           Departamentos registrados
@@ -28,33 +73,39 @@ class DepartmentsRegistered extends Component {
                 <th>
                   Email
                 </th>
-                <th>
-                  Borrar
-                </th>
               </tr>
             </thead>
           <tbody>
+          {this.state.departments.map(department => {
+            return (
             <tr>
               <th>
-
+                {department.department}
               </th>
               <td>
-
+                {department.tenant}
               </td>
               <td>
-
+                {department.phoneNumber}
               </td>
               <td>
-
+                {department.email}
+              </td>
+              <td>
+                <p class="buttons">
+                <Link to='/departments'><button class="button action">
+                <span class="icon is-small">
+                <i class="fas fa-dollar-sign"></i>
+                </span>
+                </button></Link>
+                </p>
               </td>
               <td >
                 <p class="buttons">
-
                 <button
-
+                  onClick = {() => this.handleDelete(department._id)}
                   style={{border: '1px solid red'}}
                   class="button">
-
                 <span class="icon is-small">
                 <i class="fas fa-trash-alt"></i>
                 </span>
@@ -62,12 +113,20 @@ class DepartmentsRegistered extends Component {
                 </p>
               </td>
             </tr>
+          )
+            })
+        }
           </tbody>
         </table>
         <div class="field is-grouped ">
         <p class="control">
-        <Link to="/departments"><button class="button is-primary">
+        <Link to={`/departments/${this.props.match.params.propertyId}`}><button class="button is-primary">
           Añadir Depto
+        </button></Link>
+        </p>
+        <p class="control">
+        <Link to="/properties-registered"><button class="button is-primary">
+          Ir a propiedades
         </button></Link>
         </p>
         </div>

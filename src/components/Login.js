@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Link, withRouter} from 'react-router-dom';
-import Navbar from './Navbar';
 
 class Login extends Component {
   state = {
@@ -44,7 +43,6 @@ class Login extends Component {
   render() {
     return (
       <React.Fragment>
-        <Navbar />
       <div className="section-login">
         <form className="login-form" onSubmit={ this.onSubmit} >
         <p> Inicia Sesión </p>

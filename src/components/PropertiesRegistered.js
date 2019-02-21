@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-import NavbarLogged from './NavbarLogged';
 
 class PropertiesRegistered extends Component {
   constructor(){
@@ -98,12 +97,11 @@ handleDelete = (id) => {
     console.log(this.state.properties)
     return (
       <React.Fragment>
-        <NavbarLogged />
     <div className="section-properties">
       <p>
       Propiedades registradas
       </p>
-      <table className="table is-striped is-bordered is-hoverable">
+      <table className="table is-striped is-bordered is-hoverable is-responsive">
         <thead>
           <tr>
             <th>
@@ -117,15 +115,6 @@ handleDelete = (id) => {
             </th>
             <th>
               Ciudad
-            </th>
-            <th>
-              Ver
-            </th>
-            <th>
-              Agregar
-            </th>
-            <th>
-              Borrar
             </th>
           </tr>
         </thead>
@@ -148,16 +137,16 @@ handleDelete = (id) => {
             </td>
             <td>
               <p class="buttons">
-              <Link to="/departments"><a class="button">
+              <Link to={`/departments-registered/${property._id}`}><button class="button">
               <span class="icon is-small">
               <i class="fas fa-search"></i>
               </span>
-              </a></Link>
+              </button></Link>
               </p>
             </td>
             <td>
               <p class="buttons">
-              <Link to={`/departments/${property._id}`}><button class="button">
+              <Link to={`/departments/${property._id}`}><button class="button action">
               <span class="icon is-small">
               <i class="fas fa-plus"></i>
               </span>

@@ -3,7 +3,6 @@ import login from '../images/login.png';
 import register from '../images/register.png';
 import select from '../images/select.png';
 import graphs from '../images/graphs.png';
-import NavbarLogged from './NavbarLogged';
 import ContentLogged from './ContentLogged';
 
 class Home extends Component {
@@ -12,7 +11,6 @@ class Home extends Component {
     return (
     <div className="section-home">
       <React.Fragment>
-        <NavbarLogged />
         <ContentLogged />
 
         <div className="section-about-home">

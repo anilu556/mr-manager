@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import NavbarLogged from './NavbarLogged';
 
 class Properties extends Component {
   constructor(){
@@ -70,7 +69,6 @@ class Properties extends Component {
     // console.log(localStorage.getItem('token'))
     return (
       <React.Fragment>
-        <NavbarLogged />
     <div className="section-properties">
     <p>
     Registra una nueva propiedad

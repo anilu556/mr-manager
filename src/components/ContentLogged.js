@@ -7,7 +7,7 @@ class Content extends Component {
     <div className="section-content-home">
       <div className="section-home_call">
         <p> El <span className="text_blue"> mejor </span> software para <br /> administrar condominios </p>
-        <Link className="button is-inverted is-outlined" to="/properties-registered"><strong>¡Bienvendio!</strong></Link>
+        <Link className="button is-inverted is-outlined" to="/properties-registered"><strong>¡Bienvenido!</strong></Link>
       </div>
     </div>
     );

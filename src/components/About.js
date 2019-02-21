@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import about from '../images/acerca.png';
-import Navbar from './Navbar';
 
 class About extends Component {
   render() {
     return (
     <div className="section-about">
     <React.Fragment>
-      <Navbar />
       <div className="section-about-img">
         <img src={about} alt="acerca de"/>
       </div>

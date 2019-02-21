@@ -4,7 +4,6 @@ import register from '../images/register.png';
 import select from '../images/select.png';
 import graphs from '../images/graphs.png';
 import Content from './Content';
-import Navbar from './Navbar';
 
 class Home extends Component {
   render() {
@@ -12,7 +11,6 @@ class Home extends Component {
     return (
     <div className="section-home">
       <React.Fragment>
-        <Navbar />
         <Content />
 
         <div className="section-about-home">

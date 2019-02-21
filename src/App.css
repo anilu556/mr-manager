@@ -41,6 +41,10 @@ color: #d4e9ff;
 box-shadow: inset 0 0 0 3px #d4e9ff;
 }
 
+.nav-logged p{
+  color:white;
+  font-size: 20px;
+}
 /* Login */
 
 .section-login {
@@ -183,6 +187,7 @@ box-shadow: inset 0 0 0 3px #ffffff;
   background-size: cover;
   display: flex;
   justify-content: center;
+  height: 60vh;
 }
 
 .signup-form{
@@ -260,6 +265,14 @@ button.button.is-primary:hover{
   margin: 40px auto;
 }
 
+.section-departments{
+  height: 80vh;
+}
+
+.section-properties{
+  height: 80vh;
+}
+
 .section-properties p{
   color: #052562;
   font-weight: 300;
@@ -276,14 +289,28 @@ button.button.is-primary:hover{
   text-align: center;
   padding: 20px;
   margin: auto;
+
 }
 
+button.button.action{
+  margin: 0px;
+}
+
+p.buttons{
+  padding: 10px;
+  width: 56px;
+}
+
+div.field.is-grouped{
+
+}
 /* footer */
 .footer{
   height: 240px;
   background: #5eaff9;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #1748aa,#5eaff9);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right,  #1748aa,#5eaff9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 .section-footer-home{
@@ -303,4 +330,41 @@ button.button.is-primary:hover{
 }
 a.link_footer {
   color: white;
+}
+
+/*responsive table*/
+
+@media only screen and (max-width: 800px) {
+
+ .cf:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+ * html .cf { zoom: 1; }
+ *:first-child+html .cf { zoom: 1; }
+
+ table { width: 100%; border-collapse: collapse; border-spacing: 0; }
+
+ th,
+ td { margin: 0; vertical-align: top; }
+ th { text-align: left; }
+
+ table { display: block; position: relative; width: 100%; }
+ thead { display: block; float: left; }
+ tbody { display: block; width: auto; position: relative; overflow-x: auto; white-space: nowrap; }
+ thead tr { display: block; }
+ th { display: block; text-align: right; }
+ tbody tr { display: inline-block; vertical-align: top; }
+ td { display: block; min-height: 1.25em; text-align: left; }
+
+
+	/* sort out borders */
+
+ th { border-bottom: 0; border-left: 0; }
+ td { border-left: 0; border-right: 0; border-bottom: 0; }
+ tbody tr { border-left: 1px solid #babcbf; }
+ th:last-child,
+ td:last-child { border-bottom: 1px solid #babcbf; }
+
+div.field.is-grouped{
+  display: block;
+}
+
 }
