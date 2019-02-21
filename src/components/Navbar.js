@@ -57,10 +57,12 @@ class Navbar extends Component {
 
   render() {
     return (
+
       <nav class="navbar "  role="navigation" aria-label="main navigation">
         <React.Fragment>
+      {!isLoggedIn() && (
         <div class="navbar-brand">
-          <Link to="/manager">
+          <Link to="/">
           <img class="navbar-img" src={logo} alt="logo"/>
           </Link>
           <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -69,10 +71,23 @@ class Navbar extends Component {
             <span aria-hidden="true"></span>
           </a>
         </div>
+      )}
+      {isLoggedIn() && (
+        <div class="navbar-brand">
+          <Link to="/manager">
+          <img class="navbar-img" src={logo} alt="logo"/>
+          </Link>
+        </div>
+      )}
 
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
+        {!isLoggedIn() && (
+            <Link className="navbar-item" to="/">Home</Link>
+          )}
+        {isLoggedIn() && (
             <Link className="navbar-item" to="/manager">Home</Link>
+        )}    
             <Link className="navbar-item" to="/about">Acerca de</Link>
             <Link className="navbar-item" to="/how">¿Cómo funciona?</Link>
             <Link className="navbar-item" to="/signup">¡Comienza ya!</Link>
