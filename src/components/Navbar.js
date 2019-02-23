@@ -87,7 +87,7 @@ class Navbar extends Component {
           )}
         {isLoggedIn() && (
             <Link className="navbar-item" to="/manager">Home</Link>
-        )}    
+        )}
             <Link className="navbar-item" to="/about">Acerca de</Link>
             <Link className="navbar-item" to="/how">¿Cómo funciona?</Link>
             <Link className="navbar-item" to="/signup">¡Comienza ya!</Link>
@@ -114,7 +114,7 @@ class Navbar extends Component {
             {isLoggedIn() && (
             <div>
               <div className='nav-logged' >
-                  <p>Hola, {this.state.name} </p>
+                  <p>¡Hola!</p>
               </div>
             </div>
           )}

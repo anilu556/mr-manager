@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Link, withRouter} from 'react-router-dom';
 
+
 class Login extends Component {
   state = {
     error: {
@@ -40,6 +41,11 @@ class Login extends Component {
     })
     .catch(e => alert (e));
   }
+
+  // setTimeOut = () => {
+  //   loader.style.display = "block";
+  // }, 1000);
+
   render() {
     return (
       <React.Fragment>
@@ -68,6 +74,7 @@ class Login extends Component {
               <button class="button is-primary">
               Entrar
               </button>
+              <img src=""/>
             </p>
           </div>
           <p> Si no tienes cuenta, regístrate <Link className="here" to="/signup">aquí</Link> </p>

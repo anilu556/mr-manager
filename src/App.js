@@ -12,6 +12,7 @@ import DepartmentsRegistered from './components/DepartmentsRegistered';
 import Manager from './components/Manager';
 import Footer from './components/Footer';
 import Money from './components/Money';
+import Balance from './components/Balance';
 import {Route, Switch} from 'react-router-dom';
 import PrivateRoute from "./components/PrivateComponent";
 import { Components} from 'react-bulma-components/full';
@@ -35,7 +36,8 @@ class App extends Component {
         <PrivateRoute path= "/properties-registered" exact component={PropertiesRegistered}/>
         <PrivateRoute path= "/departments-registered/:propertyId" exact component={DepartmentsRegistered}/>
         <PrivateRoute path= "/departments/:propertyId" exact component={Departments}/>
-        <PrivateRoute path= "/money/:departmentId" exact component={Money}/>
+        <PrivateRoute path= "/:propertyId/:departmentId/money" exact component={Money}/>
+        <PrivateRoute path= "/:propertyId/balance" exact component={Balance}/>
         </Switch>
         <Footer />
       </React.Fragment>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 
 class Properties extends Component {
   constructor(){
@@ -99,6 +100,11 @@ class Properties extends Component {
         <button class="button is-primary">
           Registrar Propiedad
         </button>
+        </p>
+        <p class="control">
+        <Link to="/properties-registered"><button class="button is-primary">
+          Ir a propiedades
+        </button></Link>
         </p>
         </div>
     </form>

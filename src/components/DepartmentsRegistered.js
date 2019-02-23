@@ -3,11 +3,10 @@ import {Link} from 'react-router-dom';
 import request from 'superagent';
 
 class DepartmentsRegistered extends Component {
-  constructor(props){
-  super(props)
+  constructor(){
+  super()
     this.state ={
       departments: [],
-      reload: false,
       departmentsId: ''
     }
   }
@@ -23,7 +22,7 @@ handleDelete = (id) => {
     method: 'DELETE',
     headers: {
       'Content-Type' : 'application/json',
-      "Authorization": `barear ${localStorage.getItem("token")}`
+      "Authorization": `bearer ${localStorage.getItem("token")}`
     }
   })
   .then(response => response.json())
@@ -77,6 +76,7 @@ getDepartments = () => {
             </thead>
           <tbody>
           {this.state.departments.map(department => {
+            console.log(department._id)
             return (
             <tr>
               <th>
@@ -93,9 +93,18 @@ getDepartments = () => {
               </td>
               <td>
                 <p class="buttons">
-                <Link to='/departments'><button class="button action">
+                <Link to={`/${department.propertyId}/${department._id}/money/`}><button class="button action">
                 <span class="icon is-small">
                 <i class="fas fa-dollar-sign"></i>
+                </span>
+                </button></Link>
+                </p>
+              </td>
+              <td>
+                <p class="buttons">
+                <Link to={`/${department.propertyId}/balance`}><button class="button action">
+                <span class="icon is-small">
+                <i class="fas fa-balance-scale"></i>
                 </span>
                 </button></Link>
                 </p>
@@ -125,6 +134,7 @@ getDepartments = () => {
         </button></Link>
         </p>
         <p class="control">
+
         <Link to="/properties-registered"><button class="button is-primary">
           Ir a propiedades
         </button></Link>

@@ -289,9 +289,45 @@ button.button.is-primary:hover{
   text-align: center;
   padding: 20px;
   margin: auto;
-
 }
 
+.section-money{
+  height: 90vh;
+}
+
+.section-money p{
+  color: #052562;
+  font-weight: 300;
+  font-size: 24px;
+  text-align: center;
+  padding: 20px;
+  margin: auto;
+}
+
+.section-balance p{
+  color: #052562;
+  font-weight: 300;
+  font-size: 24px;
+  text-align: center;
+  padding: 20px;
+  margin: auto;
+}
+
+.balance-columns{
+  display: flex;
+}
+
+.balance-columns-incomes{
+  width: 50%;
+}
+
+.balance-columns-expenses{
+  width: 50%;
+}
+
+.section-balance{
+  height: 90vh;
+}
 button.button.action{
   margin: 0px;
 }
@@ -330,6 +366,12 @@ div.field.is-grouped{
 }
 a.link_footer {
   color: white;
+}
+
+.balance-button{
+
+  margin: 40px 50%;
+
 }
 
 /*responsive table*/

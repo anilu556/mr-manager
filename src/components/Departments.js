@@ -1,49 +1,14 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 
 class Departments extends Component {
 
-  constructor(){
-  super()
-    this.state= {
-    // managers: [],
-    // local: '',
-    property: []
-    }
-  }
-  //
-  // componentDidMount (){
-  //   fetch('https://evening-mesa-38422.herokuapp.com/api/v1/managers', {
-  //     headers: {
-  //       "Authorization" : `bearer ${localStorage.getItem("token")}`
-  //     }
-  //   })
-  //
-  //   .then(response => response.json())
-  //   .then(data => {
-  //     // console.log(data.managers)
-  //     this.setState({
-  //       managers: data.managers
-  //     })
-  //
-  //     const token = localStorage.getItem('token')
-  //     let base64Url = token.split('.')[1]
-  //     let base64 = base64Url.replace('-','+').replace('_','/')
-  //     const t = JSON.parse(window.atob(base64))
-  //     // console.log(t.email)
-  //     const currentUser = this.state.managers.filter(manager => {
-  //       if(manager.email === t.email) {
-  //         this.setState({ managers : manager})
-  //       // console.log(manager._id)
-  //       return manager
-  //       }
-  //     })
-  //   })
-  // }
 
   onSubmitHandle = (e) => {
     e.preventDefault();
 
     const API_URL = "https://evening-mesa-38422.herokuapp.com/api/v1"
+    const link = `/departments-registered/${this.props.match.params.propertyId}`
 
     fetch(`${API_URL}/properties/${this.props.match.params.propertyId}/departments`,{
       method: "POST",
@@ -61,7 +26,7 @@ class Departments extends Component {
     })
     .then(response => response.json())
     .then(data => {
-      this.props.history.push('/properties-registered')
+      this.props.history.push(link)
 
     })
     .catch(e => alert (e));
@@ -98,8 +63,13 @@ class Departments extends Component {
         </div>
         <div class="field is-grouped is-grouped-right">
         <p class="control">
-        <button class="button is-primary">
+        <button type="submit" class="button is-primary">
           Registrar Depto
+        </button>
+        </p>
+        <p class="control">
+        <button class="button is-primary">
+          Ir a deptos
         </button>
         </p>
         </div>
