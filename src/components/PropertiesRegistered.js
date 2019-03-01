@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 class PropertiesRegistered extends Component {
   constructor(){
   super()
+
     this.state= {
     managers: [],
     local: '',
@@ -11,6 +12,7 @@ class PropertiesRegistered extends Component {
     reload: false,
     propertyId: ''
     }
+
   }
 
   componentDidMount (){
@@ -94,7 +96,7 @@ handleDelete = (id) => {
 }
 
   render() {
-    console.log(this.state.properties)
+  
     return (
       <React.Fragment>
     <div className="section-properties">

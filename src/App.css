@@ -70,6 +70,8 @@ box-shadow: inset 0 0 0 3px #d4e9ff;
   margin-bottom: 30px;
 }
 
+
+
 .here{
   color: #f81f5c;
 }
@@ -326,7 +328,7 @@ button.button.is-primary:hover{
 }
 
 .section-balance{
-  height: 90vh;
+  height: 100vh;
 }
 button.button.action{
   margin: 0px;

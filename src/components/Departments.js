@@ -26,6 +26,7 @@ class Departments extends Component {
     })
     .then(response => response.json())
     .then(data => {
+      alert("Has registrado correctamente el departamento")
       this.props.history.push(link)
 
     })

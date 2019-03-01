@@ -5,11 +5,10 @@ class Signup extends Component {
   onSubmitHandle = (e) => {
     e.preventDefault();
 
-    const API_URL = "https://evening-mesa-38422.herokuapp.com/api/v1"
+    // const API_URL = "https://evening-mesa-38422.herokuapp.com/api/v1/auth/signup"
 
-    fetch(`${API_URL}/auth/signup`,{
+    fetch('https://evening-mesa-38422.herokuapp.com/api/v1/auth/signup' ,{
       method: "POST",
-      mode: "no-cors",
       headers: {
         "Content-Type": "application/json",
       },

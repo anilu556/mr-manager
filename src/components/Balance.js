@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Money from './Money';
 import {Link} from 'react-router-dom';
 import {Bar} from 'react-chartjs-2'
 
@@ -9,7 +10,8 @@ class Balance extends Component {
       balances: [],
       balance: "0",
       income: "0",
-      expense: "0"
+      expense: "0",
+      date: ""
     }
   }
 
@@ -31,40 +33,43 @@ class Balance extends Component {
       balance: data.data[0].balance,
       income: data.data[0].incomes,
       expense: data.data[0].expenses,
+      date: data.data[0].period
     })
   })
   .catch(e => alert(e))
 
     }
 
-
 render(){
-  const { income, expense, balance } = this.state
-      console.log(this.state.balance)
+  const { income, expense, balance,date } = this.state
+      // console.log(this.state.date)
       const data = {
-        labels: [ 'Income 12-2018', 'Expense 12-2019', 'Balance 12-2018'],
+        labels: [ date],
         datasets: [
           {
-            label: ' Incomes Expenses Balance',
-            data: [income, expense, balance],
+            label: 'Ingresos',
+            data: [income],
             backgroundColor: [
-              'rgba(74, 199, 32, 0.3)',
-              'rgba(255, 2, 2, 0.3)',
-              'rgba(153, 102, 225, .4)',
-              'rgba(75, 192, 192, 0.2)',
-              'rgba(153, 102, 255, 0.2)',
-              'rgba(255, 159, 64, 0.2)'
+              'rgba(189, 223, 255)',
             ],
-            borderColor: [
-              'rgba(255,99,132,1)',
-              'rgba(255, 9, 131, 1)',
-              'rgba(255, 2, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)',
-              'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-          }
+            borderWidth: 2
+          },
+          {
+              label: 'Egresos',
+              data: [ expense],
+              backgroundColor: [
+                'rgba(0, 150, 245)',
+              ],
+              borderWidth: 2
+            },
+            {
+              label: 'Balance',
+              data: [balance],
+              backgroundColor: [
+                'rgba(28, 63, 180)',
+              ],
+              borderWidth: 2
+            },
         ]
       }
 
@@ -86,19 +91,16 @@ render(){
           ]
         }
       }
-  console.log(this.state.balances)
+
   return (
-    <React.Fragment>
   <div className="section-balance">
-  {this.state.balances.map(balance => {
-    return (
   <p> Balance por propiedad </p>
-)
-  })
-}
   <table className="table is-striped is-bordered is-hoverable">
   <thead>
     <tr>
+      <th>
+        Periodo
+      </th>
       <th>
         Ingresos
       </th>
@@ -115,6 +117,9 @@ render(){
     return (
     <tr>
       <td>
+      {balance.period}
+      </td>
+      <td>
       {balance.incomes}
       </td>
       <td>
@@ -129,13 +134,11 @@ render(){
 }
     </tbody>
   </table>
-
-
-              <div>
-                <Bar data={data} width={100} height={450} options={options} />
-              </div>
+  <div>
+    <Bar data={data} width={100} height={450} options={options} />
   </div>
-    </React.Fragment>
+  </div>
+
   )
 }
 }

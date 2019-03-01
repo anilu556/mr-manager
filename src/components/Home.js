@@ -7,7 +7,7 @@ import Content from './Content';
 
 class Home extends Component {
   render() {
-    console.log(localStorage.getItem('token'))
+    // console.log(localStorage.getItem('token'))
     return (
     <div className="section-home">
       <React.Fragment>

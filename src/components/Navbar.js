@@ -42,7 +42,7 @@ class Navbar extends Component {
               manager : manager,
               name : manager.name
             })
-          console.log(manager)
+          // console.log(manager)
           return manager
           }
         })

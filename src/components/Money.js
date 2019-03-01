@@ -25,6 +25,7 @@ class Money extends Component {
       })
       .then(response => response.json())
       .then(data => {
+        alert("Has registrado correctamente un ingreso")
         this.props.history.push(link)
       })
       .catch(e => alert (e));
@@ -52,7 +53,8 @@ class Money extends Component {
       })
       .then(response => response.json())
       .then(data => {
-        console.log(data)
+        // console.log(data)
+        alert("Has registrado correctamente un egreso")
         this.props.history.push(link)
 
       })

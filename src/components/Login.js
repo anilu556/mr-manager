@@ -3,16 +3,28 @@ import {Link, withRouter} from 'react-router-dom';
 
 
 class Login extends Component {
-  state = {
+  constructor(){
+  super()
+
+  this.state = {
     error: {
       status: false,
-      message: ""
-    }
+      message: "",
+    },
+    isLoading: false
   }
+}
+
+  toggleLoading = () => {
+    this.setState({
+  isLoading: true
+})
+}
 
   onSubmit = (e) => {
     e.preventDefault();
 
+    this.toggleLoading()
     const API_URL = "https://evening-mesa-38422.herokuapp.com/api/v1"
 
     fetch(`${API_URL}/auth/login`, {
@@ -27,6 +39,7 @@ class Login extends Component {
     })
     .then(response => response.json())
     .then(data => {
+      
       if(typeof data.token !== "undefined"){
         localStorage.setItem("token", data.token);
         this.props.history.push("/manager");
@@ -41,6 +54,12 @@ class Login extends Component {
     })
     .catch(e => alert (e));
   }
+
+  // onChangeLoading = () => {
+  //   this.setState({
+  //     loading: true
+  //   })
+  // }
 
   // setTimeOut = () => {
   //   loader.style.display = "block";
@@ -71,7 +90,7 @@ class Login extends Component {
           <div class="field is-grouped is-grouped-right">
             <p class="control">
               {this.state.error.status && <p> {this.state.error.message} </p>}
-              <button class="button is-primary">
+              <button class={ 'button is-primary' + (this.state.isLoading ? ' is-loading' : '') }>
               Entrar
               </button>
               <img src=""/>

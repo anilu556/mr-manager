@@ -61,6 +61,7 @@ class Properties extends Component {
     })
     .then(response => response.json())
     .then(data => {
+      alert("Has registrado correctamente una propiedad")
       this.props.history.push('/properties-registered')
     })
     .catch(e => alert (e));
