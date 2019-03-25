@@ -55,16 +55,6 @@ class Login extends Component {
     .catch(e => alert (e));
   }
 
-  // onChangeLoading = () => {
-  //   this.setState({
-  //     loading: true
-  //   })
-  // }
-
-  // setTimeOut = () => {
-  //   loader.style.display = "block";
-  // }, 1000);
-
   render() {
     return (
       <React.Fragment>

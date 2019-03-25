@@ -412,3 +412,14 @@ div.field.is-grouped{
 }
 
 }
+
+@media only screen and (max-width: 1088px) {
+
+.navbar-item.drop{
+  color: white;
+}
+
+.navbar-menu{
+  background-color: none;
+}
+}

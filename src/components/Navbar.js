@@ -55,74 +55,94 @@ class Navbar extends Component {
     this.props.history.push("/");
   }
 
+  hamburgerMenu = () => {
+    document.querySelector('.navbar-burger').addEventListener("click", toggleNav);
+
+    function toggleNav() {
+            var nav = document.querySelector('.navbar-menu');
+            if(nav.className == "navbar-menu") {
+                nav.className = "navbar-menu is-active";
+            } else {
+                nav.className = "navbar-menu";
+            }
+    }
+}
+
   render() {
     return (
 
-      <nav class="navbar "  role="navigation" aria-label="main navigation">
+      <nav class="navbar is-info"  role="navigation" aria-label="main navigation">
         <React.Fragment>
-      {!isLoggedIn() && (
-        <div class="navbar-brand">
-          <Link to="/">
-          <img class="navbar-img" src={logo} alt="logo"/>
-          </Link>
-          <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
-        </div>
-      )}
-      {isLoggedIn() && (
-        <div class="navbar-brand">
-          <Link to="/manager">
-          <img class="navbar-img" src={logo} alt="logo"/>
-          </Link>
-        </div>
-      )}
-
-      <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start">
+        <div class="container">     
         {!isLoggedIn() && (
-            <Link className="navbar-item" to="/">Home</Link>
+          <div class="navbar-brand">
+            <Link to="/">
+            <img class="navbar-img" src={logo} alt="logo"/>
+            </Link>
+            <span onClick={this.hamburgerMenu} role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </span>
+          </div>
           )}
         {isLoggedIn() && (
-            <Link className="navbar-item" to="/manager">Home</Link>
+          <div class="navbar-brand">
+            <Link to="/manager">
+            <img class="navbar-img" src={logo} alt="logo"/>
+            </Link>
+            <span onClick={this.hamburgerMenu} role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </span>
+          </div>
         )}
-            <Link className="navbar-item" to="/about">Acerca de</Link>
-            <Link className="navbar-item" to="/how">¿Cómo funciona?</Link>
-            <Link className="navbar-item" to="/signup">¡Comienza ya!</Link>
 
-          <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link">
-              Manager
-              </a>
-            <div class="navbar-dropdown">
-                <Link className="navbar-item drop" to="/properties-registered">Propiedades</Link>
-                <a  onClick={ this.handleLogout } class="navbar-item drop">
-                Log out
+        <div id="navMenu" class="navbar-menu">
+          <div class="navbar-start">
+          {!isLoggedIn() && (
+              <Link className="navbar-item" to="/">Home</Link>
+            )}
+          {isLoggedIn() && (
+              <Link className="navbar-item" to="/manager">Home</Link>
+          )}
+              <Link className="navbar-item" to="/about">Acerca de</Link>
+              <Link className="navbar-item" to="/how">¿Cómo funciona?</Link>
+              <Link className="navbar-item" to="/signup">¡Comienza ya!</Link>
+
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                Manager
                 </a>
+              <div class="navbar-dropdown">
+                  <Link className="navbar-item drop" to="/properties-registered">Propiedades</Link>
+                  <a  onClick={ this.handleLogout } class="navbar-item drop">
+                  Log out
+                  </a>
+              </div>
             </div>
           </div>
-        </div>
-          <div class="navbar-end">
-            <div class="navbar-item">
-            {!isLoggedIn() && (
-              <div class="buttons">
-              <Link className="button is-primary" to="/login"><strong> Log In</strong></Link>
+            <div class="navbar-end">
+              <div class="navbar-item">
+              {!isLoggedIn() && (
+                <div class="buttons">
+                <Link className="button is-primary" to="/login"><strong> Log In</strong></Link>
+                </div>
+              )}
+              {isLoggedIn() && (
+              <div>
+                <div className='nav-logged' >
+                    <p>¡Hola!</p>
+                </div>
               </div>
             )}
-            {isLoggedIn() && (
-            <div>
-              <div className='nav-logged' >
-                  <p>¡Hola!</p>
               </div>
             </div>
-          )}
-            </div>
-          </div>
         </div>
+      </div> 
         </React.Fragment>
-      </nav>
+    </nav>
     );
   }
 }
